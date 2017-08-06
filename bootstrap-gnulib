@@ -1,0 +1,2 @@
+#!/bin/bash
+../gnulib/gnulib-tool --source-base=gl --m4-base=gl/m4 --import getpass
