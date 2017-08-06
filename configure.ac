@@ -7,7 +7,7 @@ AC_CONFIG_SRCDIR([src/ipmitool.c])
 AC_CANONICAL_SYSTEM
 AM_INIT_AUTOMAKE([foreign])
 AM_CONFIG_HEADER(config.h)
-AC_PREREQ(2.50)
+AC_PREREQ(2.59)
 AC_SUBST(ac_configure_args)
 
 dnl check for requirements
