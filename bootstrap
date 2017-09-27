@@ -30,7 +30,7 @@
 # LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE,
 # EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
-aclocal
+aclocal -I gl/m4
 
 case `uname` in
 	Darwin*)
@@ -44,7 +44,7 @@ esac
 autoheader
 automake --foreign --add-missing --copy
 
-aclocal
+aclocal -I gl/m4
 autoconf
 automake --foreign
 

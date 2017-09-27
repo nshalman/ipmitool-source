@@ -12,6 +12,7 @@ AC_SUBST(ac_configure_args)
 
 dnl check for requirements
 AC_PROG_CC
+gl_EARLY
 AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
@@ -32,6 +33,7 @@ AC_FUNC_STRTOD
 AC_CHECK_FUNCS([alarm gethostbyname getaddrinfo getifaddrs socket select])
 AC_CHECK_FUNCS([memmove memset strchr strdup strerror])
 AC_CHECK_FUNCS([getpassphrase])
+gl_INIT
 
 CFLAGS="$CFLAGS -Wall -Wextra -std=gnu99 -pedantic -Wformat -Wformat-nonliteral"
 
@@ -112,6 +114,12 @@ gnu*)
 	xenable_intf_imb=no
 	xenable_intf_open=no
 	xenable_intf_usb=yes
+	;;
+esac
+
+case `uname -o` in
+Android)
+	LIBS="$LIBS -llog"
 	;;
 esac
 
@@ -654,6 +662,7 @@ AC_CONFIG_FILES([Makefile
 		control/rpmmacros
 		control/ipmitool.spec
 		lib/Makefile
+		gl/Makefile
 		include/Makefile
 		include/ipmitool/Makefile
 		src/Makefile

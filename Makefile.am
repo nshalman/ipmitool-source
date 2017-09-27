@@ -28,6 +28,8 @@
 # LIABILITY, ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE,
 # EVEN IF SUN HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
+ACLOCAL_AMFLAGS = -I gl/m4
+
 DOCDIR = $(datadir)/doc/$(PACKAGE)
 DOCLIST = $(top_srcdir)/README $(top_srcdir)/COPYING $(top_srcdir)/AUTHORS $(top_srcdir)/ChangeLog
 
@@ -40,7 +42,7 @@ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure configure-stamp \
 	mkinstalldirs config.h.in stamp-h.in \
 	$(distdir).tar.gz $(distdir).tar.bz2
 
-SUBDIRS = lib src include doc contrib control
+SUBDIRS = lib gl src include doc contrib control
 
 dist-hook:
 	cp control/ipmitool.spec $(distdir)

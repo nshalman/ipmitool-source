@@ -34,10 +34,10 @@ SUBDIRS			= plugins
 MAINTAINERCLEANFILES	= Makefile.in
 
 ipmitool_SOURCES	= ipmitool.c ipmishell.c
-ipmitool_LDADD		= $(top_builddir)/lib/libipmitool.la plugins/libintf.la
+ipmitool_LDADD		= $(top_builddir)/lib/libipmitool.la plugins/libintf.la $(top_builddir)/gl/getpass.o
 
 ipmievd_SOURCES		= ipmievd.c
-ipmievd_LDADD		= $(top_builddir)/lib/libipmitool.la plugins/libintf.la
+ipmievd_LDADD		= $(top_builddir)/lib/libipmitool.la plugins/libintf.la $(top_builddir)/gl/getpass.o
 
 bin_PROGRAMS		= ipmitool
 sbin_PROGRAMS		= ipmievd

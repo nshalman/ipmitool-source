@@ -37,6 +37,7 @@
 # include <config.h>
 #endif
 #include <ipmitool/ipmi.h>
+#include <gl/getpass.h>
 
 #define IPMI_PASSWORD_DISABLE_USER  0x00
 #define IPMI_PASSWORD_ENABLE_USER   0x01
